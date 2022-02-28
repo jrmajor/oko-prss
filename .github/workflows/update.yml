@@ -1,0 +1,44 @@
+name: Update feed
+
+on:
+  push:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  update-readme:
+    name: Update feed
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-interaction
+
+      - name: Update feed
+        run: php gen
+
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: update feed
+          branch: master
+          commit_user_name: Jeremiasz Major
+          commit_user_email: jrh.mjr@gmail.com
+          commit_author: Jeremiasz Major <jrh.mjr@gmail.com>
