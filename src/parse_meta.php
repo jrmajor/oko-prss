@@ -3,6 +3,7 @@
 namespace Major\OkoPrss;
 
 use Carbon\CarbonImmutable as Carbon;
+use Psl\Html;
 use Psl\Json;
 use Psl\Str;
 use Psl\Type;
@@ -22,7 +23,7 @@ function parse_meta(string $source): Meta
     ])->coerce(Json\decode($json));
 
     return new Meta(
-        $data['author']['name'],
+        Html\decode($data['author']['name']),
         (new Carbon($data['datePublished']))->setTime(0, 0),
         Str\trim($data['mainEntityOfPage']['@id']),
     );
