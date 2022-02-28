@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+namespace Major\OkoPrss;
+
+use NunoMaduro\Collision\Provider as Collision;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+(new Collision())->register();
