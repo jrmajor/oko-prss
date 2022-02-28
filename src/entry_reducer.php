@@ -44,7 +44,7 @@ function entry_reducer(array $acc, Crawler $el): array
         $time = $hour < 4 ? $meta->date->addDay() : $meta->date;
         $time = $time->setTime($hour, $minute);
 
-        return [[...$entries, $current], new Entry($meta->url, $time, $meta->author, $html), $meta];
+        return [[...$entries, $current], new Entry($meta, $time, $html), $meta];
     }
 
     // This must be a continuation of the current entry.

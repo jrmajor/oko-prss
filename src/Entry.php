@@ -8,15 +8,14 @@ use Psl\Str;
 final class Entry
 {
     public function __construct(
-        public readonly string $url,
+        public readonly Meta $meta,
         public readonly Carbon $time,
-        public readonly string $author,
         public readonly string $source,
     ) { }
 
     public function id(): string
     {
-        return Str\format('%s,%s', $this->url, $this->time->format('H:i'));
+        return Str\format('%s,%s', $this->meta->url, $this->time->format('H:i'));
     }
 
     public function title(): string
@@ -35,13 +34,13 @@ final class Entry
     public function append(string $source): self
     {
         return new self(
-            $this->url, $this->time, $this->author,
+            $this->meta, $this->time,
             $this->source . ' ' . $source,
         );
     }
 
     public static function empty(): self
     {
-        return new self('', new Carbon(), '', '');
+        return new self(new Meta('', new Carbon(), ''), new Carbon(), '');
     }
 }
