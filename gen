@@ -4,7 +4,23 @@
 namespace Major\OkoPrss;
 
 use NunoMaduro\Collision\Provider as Collision;
+use Psl\File;
+use Psl\Vec;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 (new Collision())->register();
+
+$articles = Vec\map([
+    'kijow-i-charkow-pod-kontrola-ukraincow-wartosc-rubla-spadla-o-40-proc-dzien-5-na-zywo',
+    'kijow-i-charkow-sie-bronia-swift-przygotowuje-sie-do-wdrozenia-sankcji-dzien-4-na-zywo',
+    'kijow-sie-broni-dzien-3-na-zywo',
+    'kijow-stolica-ukrainy-pod-rosyjskim-ostrzalem-rakietowym-dzien-2-na-zywo',
+    'rosja-zaatakowala-wojna-w-europie-stala-sie-faktem',
+], fn (string $a) => get_source($a));
+
+$entries = Vec\flat_map($articles, fn (string $a) => parse_entries($a));
+
+$feed = generate_atom($entries);
+
+File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);

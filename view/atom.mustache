@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pl-PL">
+    <title>oko.press — relacja z inwazji</title>
+    {{#entries}}
+        <entry>
+            <title><![CDATA[{{title}}]]></title>
+            <link rel="alternate" href="{{url}}"/>
+            <id>{{id}}</id>
+            <author>
+                <name><![CDATA[{{author}}]]></name>
+            </author>
+            <summary type="html">
+                <![CDATA[{{& source}}]]>
+            </summary>
+            <updated>{{timestamp}}</updated>
+        </entry>
+    {{/entries}}
+</feed>

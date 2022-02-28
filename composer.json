@@ -19,6 +19,13 @@
     "autoload": {
         "psr-4": {
             "Major\\OkoPrss\\": "src"
-        }
+        },
+        "files": [
+            "src/entry_reducer.php",
+            "src/generate_atom.php",
+            "src/get_source.php",
+            "src/parse_entries.php",
+            "src/parse_meta.php"
+        ]
     }
 }
