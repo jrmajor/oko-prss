@@ -1,0 +1,24 @@
+<?php
+
+namespace Symfony\Component\DomCrawler
+{
+    use Closure;
+    use Countable;
+    use DOMNode;
+    use IteratorAggregate;
+
+    /**
+     * @implements IteratorAggregate<int, DOMNode>
+     */
+    class Crawler implements Countable, IteratorAggregate
+    {
+        /**
+         * @template T
+         *
+         * @param Closure(Crawler, int): T $closure An anonymous function
+         *
+         * @return array<int, T>
+         */
+        public function each(Closure $closure): array;
+    }
+}
