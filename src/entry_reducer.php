@@ -7,7 +7,7 @@ use Psl\Str;
 use Psl\Type;
 use Symfony\Component\DomCrawler\Crawler;
 
-const HOUR_REGEX = '/^<p[^>]*>\\s*<strong[^>]*>\\s*(\\d+:\\d+)[^\\d\\w]*<.strong>/';
+const HOUR_REGEX = '/^<p[^>]*>\\s*<strong[^>]*>\\s*(\\d+)[:.](\\d+)[^\\d\\w]*<\\/strong>/';
 
 /**
  * Accumulator consists of a list of complete entries and the current entry.
@@ -33,14 +33,15 @@ function entry_reducer(array $acc, Crawler $el): array
         return [[...$entries, $current], null, $meta];
     }
 
-    $hour = Regex\first_match($html, HOUR_REGEX)[1] ?? null;
+    $hourMatch = Regex\first_match($html, HOUR_REGEX);
 
     $html = fix_photos($html);
     $html = replace_refs($html);
 
     // Paragraph starts with an hour, that means this is a new entry.
-    if ($hour !== null) {
-        [$hour, $minute] = Type\vec(Type\int())->coerce(Str\split($hour, ':'));
+    if ($hourMatch !== null) {
+        $hour = Type\int()->coerce($hourMatch[1]);
+        $minute = Type\int()->coerce($hourMatch[2]);
 
         // Article may contain entries made after midnight.
         // Let's hope they will sleep at 4 AM.
