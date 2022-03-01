@@ -3,8 +3,6 @@
 namespace Major\OkoPrss;
 
 use Psl\Iter;
-use Psl\Str;
-use Psl\Vec;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -16,12 +14,6 @@ function parse_entries(string $source): array
         ->filter('#banner-after-excerpt ~ div.entry-content')
         ->children()
         ->each(fn (Crawler $c) => $c);
-
-    // Filter out references to other articles.
-    $nodes = Vec\filter($nodes, function (Crawler $el) {
-        return $el->nodeName() !== 'div'
-            || ! Str\contains($el->attr('class') ?? '', 'powiazany-artykul-shortcode');
-    });
 
     [$entries] = Iter\reduce(
         $nodes,
