@@ -921,7 +921,54 @@
                 <name><![CDATA[Agnieszka Jędrzejczyk]]></name>
             </author>
             <summary type="html">
-                <![CDATA[<p><strong>11:52</strong> Rzecznik Kremla wypowiedział się na temat rekacji Rosjan na sankcje. <a href="https://twitter.com/tvrain/status/1498610578935398405?s=20&amp;t=00FHU4XF0FH7fYUwvGAK1Q" rel="noopener nofollow" target="_blank">Nazwał ją</a> „hiperemocjonalną”. Rosyjska giełda drugi dzień z rzędu nie otworzyła notowań i nie prowadzi handlu akcjami rosyjskich spółek, a Rosjanie dalej szturmują bankomaty i próbują zaopatrzyć się w zagraniczne waluty wobec ogromnych spadków wartości rubla.</p>]]>
+                <![CDATA[<p><strong>11:52</strong> Rzecznik Kremla wypowiedział się na temat rekacji Rosjan na sankcje. <a href="https://twitter.com/tvrain/status/1498610578935398405?s=20&amp;t=00FHU4XF0FH7fYUwvGAK1Q" rel="noopener nofollow" target="_blank">Nazwał ją</a> „hiperemocjonalną”. Rosyjska giełda drugi dzień z rzędu nie otworzyła notowań i nie prowadzi handlu akcjami rosyjskich spółek, a Rosjanie dalej szturmują bankomaty i próbują zaopatrzyć się w zagraniczne waluty wobec ogromnych spadków wartości rubla.</p> <div id="intertext-banners" class="powiazany-artykul-shortcode oko-na-wybory large-12 medium-12 small-12 centered">
+<div class="row intertext-banners__banner" style="display: none">
+<div>
+<a href="#none" target="_blank" class="intertext-banners">
+<picture>
+<source class="desktop" media="(min-width: 650px)">
+<source class="mobile">
+<img>
+</source></source></picture>
+</a>
+</div>
+</div>
+<script type="text/javascript">
+        $(function() {
+            // Kod do obs&#322;ugi losowania baner&oacute;w.
+            var bannersData = [{"title":"obywatelskienarzedziekontroli","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__obywatelskienarzedziekontroli","graphic_dekstop":{"title":"20200521_banner5_prostok (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5_prostok-2.png","width":1392,"height":642},"graphic_mobile":{"title":"20200521_banner5 (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5-2.png","width":1300,"height":1300}},{"title":"patrzymywladzynarece","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__patrzymywladzynarece","graphic_dekstop":{"title":"20210505_banner_wladza_prostok","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_prostok.png","width":1392,"height":642},"graphic_mobile":{"title":"20210505_banner_wladza_kwadrat","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_kwadrat.png","width":1300,"height":1300}},{"title":"1procentsledczy","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentsledczy","graphic_dekstop":{"title":"2022_1proc_banner_desk-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-01.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-01.png","width":1000,"height":1000}},{"title":"1procentmagdarobertaniapac","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentmagdarobertaniapac","graphic_dekstop":{"title":"2022_1proc_banner_desk-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-02.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-02.png","width":1000,"height":1000}},{"title":"1procentjarekkasiaagatadan","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentjarekkasiaagatadan","graphic_dekstop":{"title":"2022_1proc_banner_desk-06 (1)","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-06-1.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-06","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-06.png","width":1000,"height":1000}}];
+            var $banner     = $('#intertext-banners > .intertext-banners__banner');
+            var count       = bannersData.length;
+            var roulette    = Math.floor(Math.random() * count);
+            var dataLayerDisabled = ( bannersData.datalayer_disable === 'true' ) ? true : false;
+            
+            // Wylosowany baner.
+            bannersData = bannersData[roulette];
+
+            // Ustawiamy w&#322;a&#347;ciwo&#347;ci & pokazujemy baner.
+            $banner
+                .find('a')
+                .addClass( bannersData.class )
+                .attr('data-analytics-id', bannersData.class)
+                .attr('data-datalayer-disable', bannersData.datalayer_disable)
+                .attr('data-datalayer-type', bannersData.datalayer_type)
+                .attr('href', bannersData.url)
+                .attr('data-analytics-type', (dataLayerDisabled === true ? 'standard' : 'support') )
+                .end()
+                .find('.desktop')
+                .attr('srcset', bannersData.graphic_dekstop.url)
+                .end()
+                .find('img')
+                .attr('src', bannersData.graphic_dekstop.url)
+                .end()
+                .find('.mobile')
+                .attr('srcset', bannersData.graphic_mobile.url)
+                .end()
+                .css('display', 'block');
+        
+        });
+    </script>
+</div>]]>
             </summary>
             <updated>2022-03-01T11:52:00+01:00</updated>
         </entry>
@@ -1101,54 +1148,7 @@
                 <name><![CDATA[Agnieszka Jędrzejczyk]]></name>
             </author>
             <summary type="html">
-                <![CDATA[<p><strong>10:54 </strong>Ukraińska Pravda powołując się Witalija Kiriłowa, rzecznika regionalnego departamentu Terrorystycznych Sił Obronnych Ukrainy, informuje, że wojska białoruskie wkroczyły na terytorium obwodu czernihowskiego na Ukrainie. Potwierdza to The Kiyv Independent powołując się na źródła w ukraińskim parlamencie.</p> <blockquote class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">⚡️⚡️⚡️Belarusian troops have entered Ukraine. </p><p>According to parliament, Belarusian troops have entered Ukraine’s Chernihiv Oblast to assist Russia in its war against Ukraine.</p><p>— The Kyiv Independent (@KyivIndependent) <a href="https://twitter.com/KyivIndependent/status/1498599127818682373?ref_src=twsrc%5Etfw" rel="noopener nofollow" target="_blank">March 1, 2022</a></p></blockquote> <p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p> <p>O podobnym scenariuszu w poniedziałek, 28 lutego, pisał amerykański „Washington Post”. Sam Aleksandr Łukaszenka cytowany przez agencję BiełTA stwierdził we wtorek, że Białoruś nie zamierza uczestniczyć w operacji specjalnej w Ukrainie.</p> <div id="intertext-banners" class="powiazany-artykul-shortcode oko-na-wybory large-12 medium-12 small-12 centered">
-<div class="row intertext-banners__banner" style="display: none">
-<div>
-<a href="#none" target="_blank" class="intertext-banners">
-<picture>
-<source class="desktop" media="(min-width: 650px)">
-<source class="mobile">
-<img>
-</source></source></picture>
-</a>
-</div>
-</div>
-<script type="text/javascript">
-        $(function() {
-            // Kod do obs&#322;ugi losowania baner&oacute;w.
-            var bannersData = [{"title":"obywatelskienarzedziekontroli","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__obywatelskienarzedziekontroli","graphic_dekstop":{"title":"20200521_banner5_prostok (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5_prostok-2.png","width":1392,"height":642},"graphic_mobile":{"title":"20200521_banner5 (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5-2.png","width":1300,"height":1300}},{"title":"patrzymywladzynarece","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__patrzymywladzynarece","graphic_dekstop":{"title":"20210505_banner_wladza_prostok","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_prostok.png","width":1392,"height":642},"graphic_mobile":{"title":"20210505_banner_wladza_kwadrat","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_kwadrat.png","width":1300,"height":1300}},{"title":"1procentsledczy","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentsledczy","graphic_dekstop":{"title":"2022_1proc_banner_desk-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-01.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-01.png","width":1000,"height":1000}},{"title":"1procentmagdarobertaniapac","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentmagdarobertaniapac","graphic_dekstop":{"title":"2022_1proc_banner_desk-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-02.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-02.png","width":1000,"height":1000}},{"title":"1procentjarekkasiaagatadan","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentjarekkasiaagatadan","graphic_dekstop":{"title":"2022_1proc_banner_desk-06 (1)","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-06-1.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-06","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-06.png","width":1000,"height":1000}}];
-            var $banner     = $('#intertext-banners > .intertext-banners__banner');
-            var count       = bannersData.length;
-            var roulette    = Math.floor(Math.random() * count);
-            var dataLayerDisabled = ( bannersData.datalayer_disable === 'true' ) ? true : false;
-            
-            // Wylosowany baner.
-            bannersData = bannersData[roulette];
-
-            // Ustawiamy w&#322;a&#347;ciwo&#347;ci & pokazujemy baner.
-            $banner
-                .find('a')
-                .addClass( bannersData.class )
-                .attr('data-analytics-id', bannersData.class)
-                .attr('data-datalayer-disable', bannersData.datalayer_disable)
-                .attr('data-datalayer-type', bannersData.datalayer_type)
-                .attr('href', bannersData.url)
-                .attr('data-analytics-type', (dataLayerDisabled === true ? 'standard' : 'support') )
-                .end()
-                .find('.desktop')
-                .attr('srcset', bannersData.graphic_dekstop.url)
-                .end()
-                .find('img')
-                .attr('src', bannersData.graphic_dekstop.url)
-                .end()
-                .find('.mobile')
-                .attr('srcset', bannersData.graphic_mobile.url)
-                .end()
-                .css('display', 'block');
-        
-        });
-    </script>
-</div>]]>
+                <![CDATA[<p><strong>10:54 </strong>Ukraińska Pravda powołując się Witalija Kiriłowa, rzecznika regionalnego departamentu Terrorystycznych Sił Obronnych Ukrainy, informuje, że wojska białoruskie wkroczyły na terytorium obwodu czernihowskiego na Ukrainie. Potwierdza to The Kiyv Independent powołując się na źródła w ukraińskim parlamencie.</p> <blockquote class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">⚡️⚡️⚡️Belarusian troops have entered Ukraine. </p><p>According to parliament, Belarusian troops have entered Ukraine’s Chernihiv Oblast to assist Russia in its war against Ukraine.</p><p>— The Kyiv Independent (@KyivIndependent) <a href="https://twitter.com/KyivIndependent/status/1498599127818682373?ref_src=twsrc%5Etfw" rel="noopener nofollow" target="_blank">March 1, 2022</a></p></blockquote> <p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p> <p>O podobnym scenariuszu w poniedziałek, 28 lutego, pisał amerykański „Washington Post”. Sam Aleksandr Łukaszenka cytowany przez agencję BiełTA stwierdził we wtorek, że Białoruś nie zamierza uczestniczyć w operacji specjalnej w Ukrainie.</p>]]>
             </summary>
             <updated>2022-03-01T10:54:00+01:00</updated>
         </entry>
