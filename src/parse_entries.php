@@ -13,7 +13,7 @@ use Symfony\Component\DomCrawler\Crawler;
 function parse_entries(string $source): array
 {
     $nodes = (new Crawler($source))
-        ->filter('#banner-after-excerpt + div')
+        ->filter('#banner-after-excerpt ~ div.entry-content')
         ->children()
         ->each(fn (Crawler $c) => $c);
 
