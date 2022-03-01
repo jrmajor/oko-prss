@@ -35,6 +35,7 @@ function entry_reducer(array $acc, Crawler $el): array
 
     $hour = Regex\first_match($html, HOUR_REGEX)[1] ?? null;
 
+    $html = fix_photos($html);
     $html = replace_refs($html);
 
     // Paragraph starts with an hour, that means this is a new entry.

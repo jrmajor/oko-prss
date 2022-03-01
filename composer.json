@@ -22,6 +22,7 @@
         },
         "files": [
             "src/entry_reducer.php",
+            "src/fix_photos.php",
             "src/full_res.php",
             "src/generate_atom.php",
             "src/get_source.php",
