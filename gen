@@ -15,7 +15,7 @@ $articles = Vec\map([
     'dotknieta-sankcjami-rosja-z-zawzietoscia-bombarduje-miasta-na-ukrainie-dzien-6-na-zywo',
     'kijow-i-charkow-pod-kontrola-ukraincow-wartosc-rubla-spadla-o-40-proc-dzien-5-na-zywo',
     'kijow-i-charkow-sie-bronia-swift-przygotowuje-sie-do-wdrozenia-sankcji-dzien-4-na-zywo',
-    'kijow-sie-broni-dzien-3-na-zywo',
+    // 'kijow-sie-broni-dzien-3-na-zywo',
     // 'kijow-stolica-ukrainy-pod-rosyjskim-ostrzalem-rakietowym-dzien-2-na-zywo',
     // 'rosja-zaatakowala-wojna-w-europie-stala-sie-faktem',
 ], fn (string $a) => get_source($a));
