@@ -921,54 +921,7 @@
                 <name><![CDATA[Agnieszka Jędrzejczyk]]></name>
             </author>
             <summary type="html">
-                <![CDATA[<p><strong>11:52</strong> Rzecznik Kremla wypowiedział się na temat rekacji Rosjan na sankcje. <a href="https://twitter.com/tvrain/status/1498610578935398405?s=20&amp;t=00FHU4XF0FH7fYUwvGAK1Q" rel="noopener nofollow" target="_blank">Nazwał ją</a> „hiperemocjonalną”. Rosyjska giełda drugi dzień z rzędu nie otworzyła notowań i nie prowadzi handlu akcjami rosyjskich spółek, a Rosjanie dalej szturmują bankomaty i próbują zaopatrzyć się w zagraniczne waluty wobec ogromnych spadków wartości rubla.</p> <div id="intertext-banners" class="powiazany-artykul-shortcode oko-na-wybory large-12 medium-12 small-12 centered">
-<div class="row intertext-banners__banner" style="display: none">
-<div>
-<a href="#none" target="_blank" class="intertext-banners">
-<picture>
-<source class="desktop" media="(min-width: 650px)">
-<source class="mobile">
-<img>
-</source></source></picture>
-</a>
-</div>
-</div>
-<script type="text/javascript">
-        $(function() {
-            // Kod do obs&#322;ugi losowania baner&oacute;w.
-            var bannersData = [{"title":"obywatelskienarzedziekontroli","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__obywatelskienarzedziekontroli","graphic_dekstop":{"title":"20200521_banner5_prostok (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5_prostok-2.png","width":1392,"height":642},"graphic_mobile":{"title":"20200521_banner5 (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5-2.png","width":1300,"height":1300}},{"title":"patrzymywladzynarece","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__patrzymywladzynarece","graphic_dekstop":{"title":"20210505_banner_wladza_prostok","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_prostok.png","width":1392,"height":642},"graphic_mobile":{"title":"20210505_banner_wladza_kwadrat","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_kwadrat.png","width":1300,"height":1300}},{"title":"1procentsledczy","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentsledczy","graphic_dekstop":{"title":"2022_1proc_banner_desk-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-01.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-01.png","width":1000,"height":1000}},{"title":"1procentmagdarobertaniapac","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentmagdarobertaniapac","graphic_dekstop":{"title":"2022_1proc_banner_desk-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-02.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-02.png","width":1000,"height":1000}},{"title":"1procentjarekkasiaagatadan","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentjarekkasiaagatadan","graphic_dekstop":{"title":"2022_1proc_banner_desk-06 (1)","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-06-1.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-06","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-06.png","width":1000,"height":1000}}];
-            var $banner     = $('#intertext-banners > .intertext-banners__banner');
-            var count       = bannersData.length;
-            var roulette    = Math.floor(Math.random() * count);
-            var dataLayerDisabled = ( bannersData.datalayer_disable === 'true' ) ? true : false;
-            
-            // Wylosowany baner.
-            bannersData = bannersData[roulette];
-
-            // Ustawiamy w&#322;a&#347;ciwo&#347;ci & pokazujemy baner.
-            $banner
-                .find('a')
-                .addClass( bannersData.class )
-                .attr('data-analytics-id', bannersData.class)
-                .attr('data-datalayer-disable', bannersData.datalayer_disable)
-                .attr('data-datalayer-type', bannersData.datalayer_type)
-                .attr('href', bannersData.url)
-                .attr('data-analytics-type', (dataLayerDisabled === true ? 'standard' : 'support') )
-                .end()
-                .find('.desktop')
-                .attr('srcset', bannersData.graphic_dekstop.url)
-                .end()
-                .find('img')
-                .attr('src', bannersData.graphic_dekstop.url)
-                .end()
-                .find('.mobile')
-                .attr('srcset', bannersData.graphic_mobile.url)
-                .end()
-                .css('display', 'block');
-        
-        });
-    </script>
-</div>]]>
+                <![CDATA[<p><strong>11:52</strong> Rzecznik Kremla wypowiedział się na temat rekacji Rosjan na sankcje. <a href="https://twitter.com/tvrain/status/1498610578935398405?s=20&amp;t=00FHU4XF0FH7fYUwvGAK1Q" rel="noopener nofollow" target="_blank">Nazwał ją</a> „hiperemocjonalną”. Rosyjska giełda drugi dzień z rzędu nie otworzyła notowań i nie prowadzi handlu akcjami rosyjskich spółek, a Rosjanie dalej szturmują bankomaty i próbują zaopatrzyć się w zagraniczne waluty wobec ogromnych spadków wartości rubla.</p>]]>
             </summary>
             <updated>2022-03-01T11:52:00+01:00</updated>
         </entry>
@@ -3236,54 +3189,7 @@
                 <name><![CDATA[Magdalena Chrzczonowicz]]></name>
             </author>
             <summary type="html">
-                <![CDATA[<p><strong>12:36 </strong>„Mieliśmy dużo radości, gdy zobaczyliśmy w końcu słońce” – mówi mi Lena, 37-letnia mieszkanka Kijowa. W schronie w bloku mieszkalnym spędziła ostatnie półtora dnia. „Noc była spokojniejsza. Strzały oddaliły się na przedmieścia. Niepokoiły nas tylko fejki [red. – fake newsy]. Wczoraj poszła plotka, że Kijów jest oblężony. To nieprawda. Ewakuacja wciąż jest możliwa, większość ludzi po prostu chce zostać” – opowiada OKO.press.</p> <div id="intertext-banners" class="powiazany-artykul-shortcode oko-na-wybory large-12 medium-12 small-12 centered">
-<div class="row intertext-banners__banner" style="display: none">
-<div>
-<a href="#none" target="_blank" class="intertext-banners">
-<picture>
-<source class="desktop" media="(min-width: 650px)">
-<source class="mobile">
-<img>
-</source></source></picture>
-</a>
-</div>
-</div>
-<script type="text/javascript">
-        $(function() {
-            // Kod do obs&#322;ugi losowania baner&oacute;w.
-            var bannersData = [{"title":"obywatelskienarzedziekontroli","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__obywatelskienarzedziekontroli","graphic_dekstop":{"title":"20200521_banner5_prostok (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5_prostok-2.png","width":1392,"height":642},"graphic_mobile":{"title":"20200521_banner5 (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5-2.png","width":1300,"height":1300}},{"title":"patrzymywladzynarece","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__patrzymywladzynarece","graphic_dekstop":{"title":"20210505_banner_wladza_prostok","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_prostok.png","width":1392,"height":642},"graphic_mobile":{"title":"20210505_banner_wladza_kwadrat","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_kwadrat.png","width":1300,"height":1300}},{"title":"1procentsledczy","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentsledczy","graphic_dekstop":{"title":"2022_1proc_banner_desk-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-01.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-01.png","width":1000,"height":1000}},{"title":"1procentmagdarobertaniapac","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentmagdarobertaniapac","graphic_dekstop":{"title":"2022_1proc_banner_desk-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-02.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-02.png","width":1000,"height":1000}},{"title":"1procentjarekkasiaagatadan","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentjarekkasiaagatadan","graphic_dekstop":{"title":"2022_1proc_banner_desk-06 (1)","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-06-1.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-06","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-06.png","width":1000,"height":1000}}];
-            var $banner     = $('#intertext-banners > .intertext-banners__banner');
-            var count       = bannersData.length;
-            var roulette    = Math.floor(Math.random() * count);
-            var dataLayerDisabled = ( bannersData.datalayer_disable === 'true' ) ? true : false;
-            
-            // Wylosowany baner.
-            bannersData = bannersData[roulette];
-
-            // Ustawiamy w&#322;a&#347;ciwo&#347;ci & pokazujemy baner.
-            $banner
-                .find('a')
-                .addClass( bannersData.class )
-                .attr('data-analytics-id', bannersData.class)
-                .attr('data-datalayer-disable', bannersData.datalayer_disable)
-                .attr('data-datalayer-type', bannersData.datalayer_type)
-                .attr('href', bannersData.url)
-                .attr('data-analytics-type', (dataLayerDisabled === true ? 'standard' : 'support') )
-                .end()
-                .find('.desktop')
-                .attr('srcset', bannersData.graphic_dekstop.url)
-                .end()
-                .find('img')
-                .attr('src', bannersData.graphic_dekstop.url)
-                .end()
-                .find('.mobile')
-                .attr('srcset', bannersData.graphic_mobile.url)
-                .end()
-                .css('display', 'block');
-        
-        });
-    </script>
-</div> <p>Dziś w stolicy Ukrainy ustawiły się długie kolejki do sklepów. „Nie ma nigdzie chleba. Wszystkie zapasy poszły dla armii. My z mamą mamy sporo konserw, więc nie zajmujemy miejsca. Dziś tylko kupiłam karmę i żwirek dla kotów. Sprzedawca mówił, że dostaw już nie będzie”. Jak płynie życie w Kijowie? „Mamy kilka godzin na swoje sprawy. Zobacz, jeszcze nie widziałeś mojego mieszkania. Tu mam mapę Warszawy, wspaniałe miasto” – pokazuje mi w wideo-rozmowie Lena. „Zanosimy butelki na barykady. Tam jeszcze nie front, tam stacjonują Wojska Obrony Terytorialnej. Chętnych wciąż jest tak dużo, że nie wszystkich przyjmują. My, kobiety i starsi, możemy też nosić wodę i plakaty”.</p> <p>Plakaty? – dopytuję.</p> <p>Najłagodniejsze hasła to „PutIN – PutOUT” – śmieje się Lena</p> <p>Jej mama, która wcześniej uciekła z okupowanej przez Rosjan i separatystów stolicy Ługańska, sytuację znosi coraz gorzej. „Ma ataki paniki. Wczoraj rozmawiała z siostrą, która została w Donbasie. Ciotka wierzy w propagandę. Mama mówi jej, że ostrzelali w ługańsku przedszkola. Tamta nie wierzy. Powtarza za rosyjską propagandą, że to ukraińscy nacjonaliści”.</p> <p>– To w Kijowie też atakują nacjonaliści? – dopytuję.</p> <p>– Tego ciotka nie rozumie, nie chce słuchać. Mamie jest bardzo trudno. Ale w kraju jest inaczej niż w 2014. Wtedy nawet w Kijowie były prorosyjskie głosy. Teraz nie, wszyscy wiedzą, kto jest agresorem, a kto ofiarą”.</p> <p>Lena pierwszy raz dopytuje mnie o życie w Warszawie. „Byłam u was 20 stycznia. Tęsknię za teatrem. Miałam mieć dwie premiery w Odessie, 27 lutego i 5 marca. Tęsknię za normalnością. Cieszą mnie takie rozmowy. Dziś ćwiczę język polski, żebyś mnie lepiej rozumiał. Zobacz, wygrzebałam z szuflady podręcznik, uczę się słówek” – opowiada.</p> <p>– Boicie się tej ciszy?</p> <p>– Tak, ale nikt tu nie chce nazwać tego, co ona może oznaczać. To nie jest czas na myślenie, tylko działanie. Do 15:00 [red. – czasu lokalnego] będziemy pomagać w wyposażeniu wojska, a potem pójdziemy na korytarze. Mamy dosyć schronów. Wrócimy tam dopiero na alarm przeciwbombowy”.</p> <p>Z Leną, która od pierwszego dnia rosyjskiej agresji na Ukrainę <a href="https://oko.press/lena-wziela-trzy-koty-mame-i-zeszla-do-schronu-w-piwnicy-bloku-relacja-z-kijowa/">opowiada nam o życiu w stolicy</a>, rozmawiał Anton Ambroziak.</p>]]>
+                <![CDATA[<p><strong>12:36 </strong>„Mieliśmy dużo radości, gdy zobaczyliśmy w końcu słońce” – mówi mi Lena, 37-letnia mieszkanka Kijowa. W schronie w bloku mieszkalnym spędziła ostatnie półtora dnia. „Noc była spokojniejsza. Strzały oddaliły się na przedmieścia. Niepokoiły nas tylko fejki [red. – fake newsy]. Wczoraj poszła plotka, że Kijów jest oblężony. To nieprawda. Ewakuacja wciąż jest możliwa, większość ludzi po prostu chce zostać” – opowiada OKO.press.</p> <p>Dziś w stolicy Ukrainy ustawiły się długie kolejki do sklepów. „Nie ma nigdzie chleba. Wszystkie zapasy poszły dla armii. My z mamą mamy sporo konserw, więc nie zajmujemy miejsca. Dziś tylko kupiłam karmę i żwirek dla kotów. Sprzedawca mówił, że dostaw już nie będzie”. Jak płynie życie w Kijowie? „Mamy kilka godzin na swoje sprawy. Zobacz, jeszcze nie widziałeś mojego mieszkania. Tu mam mapę Warszawy, wspaniałe miasto” – pokazuje mi w wideo-rozmowie Lena. „Zanosimy butelki na barykady. Tam jeszcze nie front, tam stacjonują Wojska Obrony Terytorialnej. Chętnych wciąż jest tak dużo, że nie wszystkich przyjmują. My, kobiety i starsi, możemy też nosić wodę i plakaty”.</p> <p>Plakaty? – dopytuję.</p> <p>Najłagodniejsze hasła to „PutIN – PutOUT” – śmieje się Lena</p> <p>Jej mama, która wcześniej uciekła z okupowanej przez Rosjan i separatystów stolicy Ługańska, sytuację znosi coraz gorzej. „Ma ataki paniki. Wczoraj rozmawiała z siostrą, która została w Donbasie. Ciotka wierzy w propagandę. Mama mówi jej, że ostrzelali w ługańsku przedszkola. Tamta nie wierzy. Powtarza za rosyjską propagandą, że to ukraińscy nacjonaliści”.</p> <p>– To w Kijowie też atakują nacjonaliści? – dopytuję.</p> <p>– Tego ciotka nie rozumie, nie chce słuchać. Mamie jest bardzo trudno. Ale w kraju jest inaczej niż w 2014. Wtedy nawet w Kijowie były prorosyjskie głosy. Teraz nie, wszyscy wiedzą, kto jest agresorem, a kto ofiarą”.</p> <p>Lena pierwszy raz dopytuje mnie o życie w Warszawie. „Byłam u was 20 stycznia. Tęsknię za teatrem. Miałam mieć dwie premiery w Odessie, 27 lutego i 5 marca. Tęsknię za normalnością. Cieszą mnie takie rozmowy. Dziś ćwiczę język polski, żebyś mnie lepiej rozumiał. Zobacz, wygrzebałam z szuflady podręcznik, uczę się słówek” – opowiada.</p> <p>– Boicie się tej ciszy?</p> <p>– Tak, ale nikt tu nie chce nazwać tego, co ona może oznaczać. To nie jest czas na myślenie, tylko działanie. Do 15:00 [red. – czasu lokalnego] będziemy pomagać w wyposażeniu wojska, a potem pójdziemy na korytarze. Mamy dosyć schronów. Wrócimy tam dopiero na alarm przeciwbombowy”.</p> <p>Z Leną, która od pierwszego dnia rosyjskiej agresji na Ukrainę <a href="https://oko.press/lena-wziela-trzy-koty-mame-i-zeszla-do-schronu-w-piwnicy-bloku-relacja-z-kijowa/">opowiada nam o życiu w stolicy</a>, rozmawiał Anton Ambroziak.</p>]]>
             </summary>
             <updated>2022-02-28T12:36:00+01:00</updated>
         </entry>
@@ -5131,54 +5037,7 @@
                 <name><![CDATA[Michał Danielewski]]></name>
             </author>
             <summary type="html">
-                <![CDATA[<p><strong>12:30 </strong>„Wystąpienie kanclerza Niemiec Olafa Scholza to odwrócenie niemieckiej retoryki o 180 stopni „- pisze na Twitterze ekspertka Ośrodka Studiów Wschodnich Justyna Gotkowska.</p> <p>Kanclerz Niemiec Olaf Scholz <a href="https://twitter.com/dw_polski/status/1497881901876629507?s=20&amp;t=zVJ22LRVNrNcX1FDSIZtQg" rel="noopener nofollow" target="_blank">zapowiedział</a> nowy fundusz 100 miliardów euro na wydatki wojskowe i 2 proc. PKB na obronę już w 2024 roku. „Chcemy zająć majątki wszystkich oligarchów, zamykamy wszystkie banki rosyjskie i zamykamy im system SWIFT” – powiedział w Bundestagu kanclerz Niemiec Olaf Scholz.</p> <div id="intertext-banners" class="powiazany-artykul-shortcode oko-na-wybory large-12 medium-12 small-12 centered">
-<div class="row intertext-banners__banner" style="display: none">
-<div>
-<a href="#none" target="_blank" class="intertext-banners">
-<picture>
-<source class="desktop" media="(min-width: 650px)">
-<source class="mobile">
-<img>
-</source></source></picture>
-</a>
-</div>
-</div>
-<script type="text/javascript">
-        $(function() {
-            // Kod do obs&#322;ugi losowania baner&oacute;w.
-            var bannersData = [{"title":"obywatelskienarzedziekontroli","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__obywatelskienarzedziekontroli","graphic_dekstop":{"title":"20200521_banner5_prostok (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5_prostok-2.png","width":1392,"height":642},"graphic_mobile":{"title":"20200521_banner5 (2)","url":"https:\/\/oko.press\/images\/2022\/01\/20200521_banner5-2.png","width":1300,"height":1300}},{"title":"patrzymywladzynarece","url":"https:\/\/oko.press\/wesprzyj\/abonament","datalayer_disable":"false","datalayer_type":"Cykliczna","class":"baner-srodtekstowy__patrzymywladzynarece","graphic_dekstop":{"title":"20210505_banner_wladza_prostok","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_prostok.png","width":1392,"height":642},"graphic_mobile":{"title":"20210505_banner_wladza_kwadrat","url":"https:\/\/oko.press\/images\/2022\/01\/20210505_banner_wladza_kwadrat.png","width":1300,"height":1300}},{"title":"1procentsledczy","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentsledczy","graphic_dekstop":{"title":"2022_1proc_banner_desk-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-01.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-01","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-01.png","width":1000,"height":1000}},{"title":"1procentmagdarobertaniapac","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentmagdarobertaniapac","graphic_dekstop":{"title":"2022_1proc_banner_desk-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-02.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-02","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-02.png","width":1000,"height":1000}},{"title":"1procentjarekkasiaagatadan","url":"https:\/\/oko.press\/1procent\/","datalayer_disable":"true","datalayer_type":"Jednorazowa","class":"baner-srodtekstowy__1procentjarekkasiaagatadan","graphic_dekstop":{"title":"2022_1proc_banner_desk-06 (1)","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner_desk-06-1.png","width":1392,"height":642},"graphic_mobile":{"title":"2022_1proc_banner-kwadrat-06","url":"https:\/\/oko.press\/images\/2022\/02\/2022_1proc_banner-kwadrat-06.png","width":1000,"height":1000}}];
-            var $banner     = $('#intertext-banners > .intertext-banners__banner');
-            var count       = bannersData.length;
-            var roulette    = Math.floor(Math.random() * count);
-            var dataLayerDisabled = ( bannersData.datalayer_disable === 'true' ) ? true : false;
-            
-            // Wylosowany baner.
-            bannersData = bannersData[roulette];
-
-            // Ustawiamy w&#322;a&#347;ciwo&#347;ci & pokazujemy baner.
-            $banner
-                .find('a')
-                .addClass( bannersData.class )
-                .attr('data-analytics-id', bannersData.class)
-                .attr('data-datalayer-disable', bannersData.datalayer_disable)
-                .attr('data-datalayer-type', bannersData.datalayer_type)
-                .attr('href', bannersData.url)
-                .attr('data-analytics-type', (dataLayerDisabled === true ? 'standard' : 'support') )
-                .end()
-                .find('.desktop')
-                .attr('srcset', bannersData.graphic_dekstop.url)
-                .end()
-                .find('img')
-                .attr('src', bannersData.graphic_dekstop.url)
-                .end()
-                .find('.mobile')
-                .attr('srcset', bannersData.graphic_mobile.url)
-                .end()
-                .css('display', 'block');
-        
-        });
-    </script>
-</div> <p>„Putin nie zmieni kursu szybko, ale szybko poczuje koszty agresji. Mowa o sankcjach gospodarczych i bankowych, odcięciu od SWIFT. (…) Scholz mówi o przeznaczaniu ponad 2 proc. PKB na obronność rok do roku. Chce wpisania specjalnego funduszu do ustawy zasadniczej. To nie tylko dla sojuszników, ale dla niemieckiego bezpieczeństwa. Mówi o konieczności przyspieszenia inwestycji w OZE i dywersyfikacji źródeł gazu – zapowiedział budowę 2 terminali LNG. Mówi o przyspieszeniu wspólnych projektów z Francją (czołg, samolot nowej generacji), zakupie uzbrojonych dronów, zakupie samolotów F-35 do przenoszenia broni jądrowej i Eurofighter do walki elektronicznej. Scholz też podkreśla suwerenność UE i to, że Niemcy będą się starały ją wzmacniać. Ważne jest też zachowanie spójności Unii” – pisze Gotkowska.</p> <blockquote class="twitter-tweet" data-width="500" data-dnt="true"><p lang="pl" dir="ltr">Bardzo mocne przemówienie Scholza. Odwrócenie niemieckiej retoryki o 180 stopni. 24.02.2022 punktem zwrotnym – świat nie będzie taki sam po tej dacie. Wojna jest katastrofą dla 🇺🇦 i będzie katastrofą dla 🇷🇺</p><p>— Justyna Gotkowska (@jgotkowska) <a href="https://twitter.com/jgotkowska/status/1497888571801407489?ref_src=twsrc%5Etfw" rel="noopener nofollow" target="_blank">February 27, 2022</a></p></blockquote> <p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>]]>
+                <![CDATA[<p><strong>12:30 </strong>„Wystąpienie kanclerza Niemiec Olafa Scholza to odwrócenie niemieckiej retoryki o 180 stopni „- pisze na Twitterze ekspertka Ośrodka Studiów Wschodnich Justyna Gotkowska.</p> <p>Kanclerz Niemiec Olaf Scholz <a href="https://twitter.com/dw_polski/status/1497881901876629507?s=20&amp;t=zVJ22LRVNrNcX1FDSIZtQg" rel="noopener nofollow" target="_blank">zapowiedział</a> nowy fundusz 100 miliardów euro na wydatki wojskowe i 2 proc. PKB na obronę już w 2024 roku. „Chcemy zająć majątki wszystkich oligarchów, zamykamy wszystkie banki rosyjskie i zamykamy im system SWIFT” – powiedział w Bundestagu kanclerz Niemiec Olaf Scholz.</p> <p>„Putin nie zmieni kursu szybko, ale szybko poczuje koszty agresji. Mowa o sankcjach gospodarczych i bankowych, odcięciu od SWIFT. (…) Scholz mówi o przeznaczaniu ponad 2 proc. PKB na obronność rok do roku. Chce wpisania specjalnego funduszu do ustawy zasadniczej. To nie tylko dla sojuszników, ale dla niemieckiego bezpieczeństwa. Mówi o konieczności przyspieszenia inwestycji w OZE i dywersyfikacji źródeł gazu – zapowiedział budowę 2 terminali LNG. Mówi o przyspieszeniu wspólnych projektów z Francją (czołg, samolot nowej generacji), zakupie uzbrojonych dronów, zakupie samolotów F-35 do przenoszenia broni jądrowej i Eurofighter do walki elektronicznej. Scholz też podkreśla suwerenność UE i to, że Niemcy będą się starały ją wzmacniać. Ważne jest też zachowanie spójności Unii” – pisze Gotkowska.</p> <blockquote class="twitter-tweet" data-width="500" data-dnt="true"><p lang="pl" dir="ltr">Bardzo mocne przemówienie Scholza. Odwrócenie niemieckiej retoryki o 180 stopni. 24.02.2022 punktem zwrotnym – świat nie będzie taki sam po tej dacie. Wojna jest katastrofą dla 🇺🇦 i będzie katastrofą dla 🇷🇺</p><p>— Justyna Gotkowska (@jgotkowska) <a href="https://twitter.com/jgotkowska/status/1497888571801407489?ref_src=twsrc%5Etfw" rel="noopener nofollow" target="_blank">February 27, 2022</a></p></blockquote> <p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>]]>
             </summary>
             <updated>2022-02-27T12:30:00+01:00</updated>
         </entry>
