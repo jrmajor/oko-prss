@@ -7,7 +7,7 @@ use Psl\Str;
 use Psl\Type;
 use Symfony\Component\DomCrawler\Crawler;
 
-const HOUR_REGEX = '/^<p[^>]*>\\s*<strong[^>]*>\\s*(\\d+:\\d+)[\\s.:]*<.strong>/';
+const HOUR_REGEX = '/^<p[^>]*>\\s*<strong[^>]*>\\s*(\\d+:\\d+)[^\d\w]*<.strong>/';
 
 /**
  * Accumulator consists of a list of complete entries and the current entry.
