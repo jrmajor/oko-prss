@@ -2,6 +2,7 @@
 
 namespace Major\OkoPrss;
 
+use Psl\Dict;
 use Psl\Iter;
 use Psl\Str;
 use Psl\Vec;
@@ -28,7 +29,5 @@ function parse_entries(string $source): array
     );
 
     // The first entry is junk, remove it.
-    array_shift($entries);
-
-    return $entries;
+    return Vec\values(Dict\drop($entries, 1));
 }
