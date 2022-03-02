@@ -24,5 +24,7 @@ $articles = Vec\map([
 $entries = Vec\flat_map($articles, fn (string $a) => parse_entries($a));
 
 $feed = generate_atom(Dict\take($entries, 250));
+$full = generate_atom($entries);
 
 File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);
+File\write(__DIR__ . '/feed/full.xml', $full, File\WriteMode::TRUNCATE);
