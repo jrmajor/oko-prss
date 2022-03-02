@@ -7,7 +7,7 @@ use Psl\Str;
 
 const WRAPPER_REGEX = '/<p[^>]*>(<img[^>]+\\/?\\s*>)\\s*<\\/p>/';
 
-const PHOTO_REGEX = '/<img[\S\s]*src="https:\\/\\/[^"]+lazy-archive-white.jpg"[\S\s]*'
+const PHOTO_REGEX = '/<img[\\S\\s]*src="https:\\/\\/[^"]+lazy-archive-white.jpg"[\\S\\s]*'
     . 'data-srcset="(https:\\/\\/oko\\.press\\/images\\/[^"\\s]+)/';
 
 const PHOTO_PLACEHOLDER = 'https://oko.press/app/themes/oko/assets/images/lazy-archive-white.jpg';
