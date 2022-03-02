@@ -19,7 +19,8 @@ function parse_entries(string $source): array
         ->each(fn (Crawler $c) => $c);
 
     $nodes = Vec\filter($nodes, function (Crawler $n): bool {
-        return ! Str\contains($n->html(), 'bannersData = bannersData[roulette];');
+        return ! Str\contains($n->html(), 'bannersData = bannersData[roulette];')
+            && ! Str\contains($n->html(), '2019/09/europejski-samo-tlo-kwadrat.png');
     });
 
     [$entries] = Iter\reduce(

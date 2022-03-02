@@ -29,7 +29,7 @@ function entry_reducer(array $acc, Crawler $el): array
     $html = $el->outerHtml();
 
     // We arrived at the summary, the rest of the article is junk.
-    if (Str\starts_with($html, '<h2>')) {
+    if (Str\starts_with($html, '<h2>') || Str\contains($html, 'ScrollToComment')) {
         return [[...$entries, $current], null, $meta];
     }
 
