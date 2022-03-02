@@ -5,11 +5,11 @@ namespace Major\OkoPrss;
 use Psl\Regex;
 use Psl\Str;
 
-const PODCAST_REGEX = '/<div class="podcast-embedded">.*<a href="([^"]+)".*'
-    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)".*<h6[^>]*>([^<]+)<\\/h6>/';
+const PODCAST_REGEX = '/<div class="podcast-embedded">[\S\s]*<a href="([^"]+)"[\S\s]*'
+    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\S\s]*<h6[^>]*>([^<]+)<\\/h6>/';
 
-const ARTICLE_REGEX = '/<div class="powiazany-artykul-shortcode">.*<a href="([^"]+)".*'
-    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)".*alt="([^"]+)".*'
+const ARTICLE_REGEX = '/<div class="powiazany-artykul-shortcode">[\S\s]*<a href="([^"]+)"[\S\s]*'
+    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\S\s]*alt="([^"]+)"[\S\s]*'
     . '<h3[^>]*>([^<]+)<\\/h3>/';
 
 const MAP_REGEX = '/flourish-map.*data-url="([^"]+flourish\\.studio\\/[^"]+\\/embed)"/';
