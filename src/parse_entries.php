@@ -13,6 +13,12 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 function parse_entries(string $source): array
 {
+    $module = '<article class="entry"><div class="content">'
+        . '<section class="body"><div class="module"><div class="module">';
+
+    $source = Str\replace($source, $module, '');
+    $source = Str\replace($source, '</div></div></section></div></article>', '');
+
     $nodes = (new Crawler($source))
         ->filter('#banner-after-excerpt ~ div.entry-content')
         ->children()
