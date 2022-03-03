@@ -2,7 +2,6 @@
 
 namespace Major\OkoPrss;
 
-use Psl\Dict;
 use Psl\Iter;
 use Psl\Regex;
 use Psl\Str;
@@ -42,12 +41,5 @@ function parse_entries(string $source): array
             && ! Str\contains($n->html(), '2019/09/europejski-samo-tlo-kwadrat.png');
     });
 
-    [$entries] = Iter\reduce(
-        $nodes,
-        entry_reducer(...),
-        [[], Entry::empty(), parse_meta($source)],
-    );
-
-    // The first entry is junk, remove it.
-    return Vec\values(Dict\drop($entries, 1));
+    return Iter\reduce($nodes, entry_reducer(...), new Acc(parse_meta($source)))->entries;
 }

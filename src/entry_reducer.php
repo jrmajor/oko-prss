@@ -9,28 +9,19 @@ use Symfony\Component\DomCrawler\Crawler;
 
 const HOUR_REGEX = '/^<(?:p|div)[^>]*>\\s*<strong[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\d+)[^\\d\\w]/';
 
-/**
- * Accumulator consists of a list of complete entries and the current entry.
- * If the next element isn't a new entry, it will be appended to the current one.
- *
- * @param array{list<Entry>, ?Entry, Meta} $acc
- * @return array{list<Entry>, ?Entry, Meta}
- */
-function entry_reducer(array $acc, Crawler $el): array
+function entry_reducer(Acc $acc, Crawler $el): Acc
 {
-    [$entries, $current, $meta] = $acc;
-
     // Current entry being null means we finished parsing entries.
     // We need to skip junk at the end of the article.
-    if ($current === null) {
-        return [$entries, $current, $meta];
+    if ($acc->stopped) {
+        return $acc;
     }
 
     $html = $el->outerHtml();
 
     // We arrived at the summary, the rest of the article is junk.
     if (Str\starts_with($html, '<h2>') || Str\contains($html, 'ScrollToComment')) {
-        return [[...$entries, $current], null, $meta];
+        return $acc->stop();
     }
 
     $hourMatch = Regex\first_match($html, HOUR_REGEX);
@@ -45,12 +36,12 @@ function entry_reducer(array $acc, Crawler $el): array
 
         // Article may contain entries made after midnight.
         // Let's hope they will sleep at 4 AM.
-        $time = $hour < 4 ? $meta->date->addDay() : $meta->date;
+        $time = $hour < 4 ? $acc->meta->date->addDay() : $acc->meta->date;
         $time = $time->setTime($hour, $minute);
 
-        return [[...$entries, $current], new Entry($meta, $time, $html), $meta];
+        return $acc->newEntry($time, $html);
     }
 
     // This must be a continuation of the current entry.
-    return [$entries, $current->append($html), $meta];
+    return $acc->appendCurrent($html);
 }

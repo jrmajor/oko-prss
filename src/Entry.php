@@ -38,9 +38,4 @@ final class Entry
             $this->source . ' ' . $source,
         );
     }
-
-    public static function empty(): self
-    {
-        return new self(new Meta('', new Carbon(), ''), new Carbon(), '');
-    }
 }
