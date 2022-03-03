@@ -4,6 +4,7 @@ namespace Major\OkoPrss;
 
 use Psl\Dict;
 use Psl\Iter;
+use Psl\Regex;
 use Psl\Str;
 use Psl\Vec;
 use Symfony\Component\DomCrawler\Crawler;
@@ -23,6 +24,14 @@ function parse_entries(string $source): array
         ->filter('#banner-after-excerpt ~ div.entry-content')
         ->children()
         ->each(fn (Crawler $c) => $c);
+
+    $nodes = Vec\flat_map($nodes, function (Crawler $c): array {
+        if ($c->nodeName() === 'div' && Regex\matches($c->html(), HOUR_REGEX)) {
+            return $c->children()->each(fn (Crawler $c) => $c);
+        }
+
+        return [$c];
+    });
 
     $nodes = Vec\filter($nodes, function (Crawler $n): bool {
         return ! Str\contains($n->html(), 'bannersData = bannersData[roulette];')
