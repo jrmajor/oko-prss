@@ -8,9 +8,6 @@ use Psl\Str;
 use Psl\Vec;
 use Symfony\Component\DomCrawler\Crawler;
 
-const MODULE_START = '<article class="entry"><div class="content">'
-    . '<section class="body"><div class="module"><div class="module">';
-
 /**
  * @return list<Entry>
  */
@@ -21,19 +18,30 @@ function parse_entries(string $source): array
         ->children()
         ->each(fn (Crawler $c) => $c);
 
-    $nodes = Vec\flat_map($nodes, function (Crawler $c): array {
-        if ($c->nodeName() === 'div' && Regex\matches($c->html(), HOUR_REGEX)) {
-            return $c->children()->each(fn (Crawler $c) => $c);
+    $nodes = Vec\flat_map($nodes, function (Crawler $original): array {
+        $isBlock = fn (Crawler $el): bool => Iter\contains([
+            'article', 'div', 'section', 'header', 'footer',
+        ], $el->nodeName());
+
+        $child = $original;
+
+        while ($isBlock($child) && $child->children()->count() === 1) {
+            if (Regex\matches($child->first()->html(), HOUR_REGEX)) {
+                return $child->children()->each(fn (Crawler $c) => $c);
+            }
+
+            $child = $child->children()->first();
         }
 
         if (
-            $c->nodeName() === 'article'
-            && Str\starts_with($c->outerHtml(), MODULE_START)
+            $isBlock($child)
+            && $child->children()->count() !== 0
+            && Regex\matches($child->first()->html(), HOUR_REGEX)
         ) {
-            return $c->first()->first()->first()->first()->each(fn (Crawler $c) => $c);
+            return $child->children()->each(fn (Crawler $c) => $c);
         }
 
-        return [$c];
+        return $child->nodeName() === 'p' ? [$child] : [$original];
     });
 
     $nodes = Vec\filter($nodes, function (Crawler $n): bool {
