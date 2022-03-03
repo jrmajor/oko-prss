@@ -13,6 +13,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'rosjanie-przejeli-cherson-potezne-eksplozje-w-kijowie-dzien-8-na-zywo',
     'kijow-charkow-i-cherson-pod-ostrzalem-w-przemyslu-prawicowe-bojowki-dzien-7-na-zywo',
     'dotknieta-sankcjami-rosja-z-zawzietoscia-bombarduje-miasta-na-ukrainie-dzien-6-na-zywo',
     'kijow-i-charkow-pod-kontrola-ukraincow-wartosc-rubla-spadla-o-40-proc-dzien-5-na-zywo',
