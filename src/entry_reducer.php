@@ -11,7 +11,6 @@ const HOUR_REGEX = '/^<(?:p|div)[^>]*>\\s*<strong[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\
 
 function entry_reducer(Acc $acc, Crawler $el): Acc
 {
-    // Current entry being null means we finished parsing entries.
     // We need to skip junk at the end of the article.
     if ($acc->stopped) {
         return $acc;
