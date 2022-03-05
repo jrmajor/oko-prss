@@ -25,6 +25,8 @@ function entry_reducer(Acc $acc, Crawler $el): Acc
 
     $hourMatch = Regex\first_match($html, HOUR_REGEX);
 
+    $html = Str\after($html, '<div class="accordion-content" data-tab-content><div class="fc"><p></p>') ?? $html;
+    $html = Str\before($html, '<p></p></div><div class="text-center medium-text-right tab-tools">') ?? $html;
     $html = fix_photos($html);
     $html = replace_refs($html);
 
