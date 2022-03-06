@@ -20,7 +20,7 @@ function entry_reducer(Acc $acc, Crawler $el): Acc
 
     // We arrived at the summary, the rest of the article is junk.
     if (Str\starts_with($html, '<h2>') || Str\contains($html, 'ScrollToComment')) {
-        return $acc->stop();
+        return Str\contains($html, '6 marca') ? $acc : $acc->stop();
     }
 
     $hourMatch = Regex\first_match($html, HOUR_REGEX);
