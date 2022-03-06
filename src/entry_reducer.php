@@ -7,7 +7,7 @@ use Psl\Str;
 use Psl\Type;
 use Symfony\Component\DomCrawler\Crawler;
 
-const HOUR_REGEX = '/^<(?:p|div)[^>]*>\\s*<strong[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\d+)[^\\d\\w]/';
+const HOUR_REGEX = '/^<(?:p|div)[^>]*>\\s*<(?:strong|b)[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\d+)[^\\d\\w]/';
 
 function entry_reducer(Acc $acc, Crawler $el): Acc
 {
