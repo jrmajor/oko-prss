@@ -13,6 +13,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'mariupol-ktory-znalismy-juz-nie-istnieje-mowi-mer-miasta-dzien-11-na-zywo',
     'mariupol-oblezony-zelenski-nato-daje-zielone-swiatlo-dla-bombardowan-dzien-10-na-zywo',
     'pozar-w-elektrowni-jadrowej-po-rosyjskim-ostrzale-kolejny-dzien-walk-w-ukrainie-dzien-9-na-zywo',
     'rosjanie-przejeli-cherson-potezne-eksplozje-w-kijowie-dzien-8-na-zywo',
