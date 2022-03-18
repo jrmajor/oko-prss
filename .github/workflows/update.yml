@@ -20,6 +20,13 @@ jobs:
         with:
           php-version: "8.1"
 
+      - name: Articles cache
+        uses: actions/cache@v2
+        with:
+          path: .cache/articles
+          key: articles-${{ github.sha }}
+          restore-keys: articles-
+
       - name: Install Composer dependencies
         run: composer install --no-progress --no-interaction
 

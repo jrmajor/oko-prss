@@ -8,7 +8,7 @@ use Psl\File;
 use Psl\Filesystem;
 use Psl\Str;
 
-const CACHE_PATH = __DIR__ . '/.cache/articles';
+const CACHE_PATH = __DIR__ . '/../.cache/articles';
 
 function get_source(string $article): string
 {
