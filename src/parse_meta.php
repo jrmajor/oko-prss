@@ -16,6 +16,8 @@ function parse_meta(string $source): Meta
         ->first()
         ->html();
 
+    $json = Str\replace($json, "\r\n", '\\n');
+
     $data = Type\shape([
         'author' => Type\shape(['name' => Type\string()]),
         'datePublished' => Type\string(),
