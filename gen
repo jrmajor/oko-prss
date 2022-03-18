@@ -13,6 +13,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'rosja-dalej-atakuje-charkow-i-sumy-w-turcji-lawrow-spotka-sie-z-kuleba-ukraina-dzien-15-na-zywo',
+    'usa-wysylaja-do-polski-rakiety-patriot-onz-juz-1207-ofiar-cywilnych-wojny-ukraina-dzien-14-na-zywo',
+    'wojna-ukraina-dzien-13-na-zywo',
     'gina-dzieci-dramat-irpienia-biden-chce-zakazac-importu-ropy-z-rosji-dzien-12-na-zywo',
     'mariupol-ktory-znalismy-juz-nie-istnieje-mowi-mer-miasta-dzien-11-na-zywo',
     'mariupol-oblezony-zelenski-nato-daje-zielone-swiatlo-dla-bombardowan-dzien-10-na-zywo',
