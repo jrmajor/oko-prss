@@ -13,6 +13,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'eksplozje-lwow-ukraina-23-dzien',
+    'zelenski-rosja-stala-sie-panstwem-terrorystycznym-ukraina-dzien-22-na-zywo',
+    'alarmy-bombowe-w-kijowie-jaroslaw-kaczynski-zaapelowal-o-pokojowa-misje-nato-ukraina-dzien-21-na-zywo',
+    'zelenski-do-rosyjskich-zolnierzy-dlaczego-musicie-umierac-chcecie-zyc-wiemy-to-ukraina-dzien-20-na-zywo',
+    'zmarla-ciezarna-ze-slynnego-zdjecia-ze-szpitala-w-mariupolu-kolejna-runda-negocjacji-pokojowychukraina-dzien-19-na-zywo',
+    'rosja-sie-okopuje-i-sieje-smierc-ukraina-dzien-16-na-zywo',
     'rosja-dalej-atakuje-charkow-i-sumy-w-turcji-lawrow-spotka-sie-z-kuleba-ukraina-dzien-15-na-zywo',
     'usa-wysylaja-do-polski-rakiety-patriot-onz-juz-1207-ofiar-cywilnych-wojny-ukraina-dzien-14-na-zywo',
     'wojna-ukraina-dzien-13-na-zywo',
