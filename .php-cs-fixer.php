@@ -5,4 +5,5 @@ $finder = PhpCsFixer\Finder::create()
     ->append([__DIR__ . '/gen'])
     ->ignoreVCS(true);
 
-return Major\CS\config($finder);
+return Major\CS\config($finder)
+    ->setCacheFile('.cache/.php-cs-fixer.cache');
