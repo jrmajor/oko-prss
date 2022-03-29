@@ -26,6 +26,7 @@
             "src/full_res.php",
             "src/generate_atom.php",
             "src/get_source.php",
+            "src/match_hour.php",
             "src/parse_entries.php",
             "src/parse_meta.php",
             "src/replace_refs.php"
