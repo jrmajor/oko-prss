@@ -49,5 +49,10 @@ function parse_entries(string $source): array
             && ! Str\contains($n->html(), '2019/09/europejski-samo-tlo-kwadrat.png');
     });
 
+    $nodes = Vec\filter($nodes, function (Crawler $n): bool {
+        return $n->nodeName() !== 'script' ||
+            ! Str\contains($n->html(), 't="live-news",e="live-blog-update"');
+    });
+
     return Iter\reduce($nodes, entry_reducer(...), new Acc(parse_meta($source)))->entries;
 }
