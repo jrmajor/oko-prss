@@ -45,7 +45,7 @@ function parse_entries(string $source): array
     });
 
     $nodes = Vec\filter($nodes, function (Crawler $n): bool {
-        return ! Str\contains($n->html(), 'bannersData = bannersData[roulette];')
+        return ! Str\contains($n->outerHtml(), 'id="intertext-banners"')
             && ! Str\contains($n->html(), '2019/09/europejski-samo-tlo-kwadrat.png');
     });
 
