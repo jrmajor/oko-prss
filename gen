@@ -13,6 +13,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'miesiac-od-wybuchu-wojny-zelenski-wzywa-wyjdzcie-na-ulice-okazcie-wsparcie-ukrainie-dzien-29-na-zywo',
+    'ukraina-wojna-dzien-28-na-zywo',
+    'ukraina-odrzucila-rosyjskie-ultimatum-w-sprawie-mariupola-dzien-27-na-zywo',
+    'dzis-piata-runda-rozmow-ukrainy-i-rosji-mariupol-okrazony-rosjanie-stawiaja-ultimatium-dzien-26-wojny-na-zywo',
+    '130-zolnierzy-z-jednej-dywizji-odmowilo-udzialu-w-wojnie-rosja-wprowadzi-mobilizacjedzien-25-na-zywo',
+    'zelenski-czas-na-spotkanie-nie-zyje-rosyjski-general-mordwiczew-dzien-24-na-zywo',
     'eksplozje-lwow-ukraina-23-dzien',
     'zelenski-rosja-stala-sie-panstwem-terrorystycznym-ukraina-dzien-22-na-zywo',
     'alarmy-bombowe-w-kijowie-jaroslaw-kaczynski-zaapelowal-o-pokojowa-misje-nato-ukraina-dzien-21-na-zywo',
