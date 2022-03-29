@@ -2,6 +2,7 @@
 
 namespace Major\OkoPrss;
 
+use Psl\Html;
 use Psl\Regex;
 use Psl\Str;
 
@@ -9,7 +10,7 @@ const PODCAST_REGEX = '/<div class="podcast-embedded">[\\S\\s]*<a href="([^"]+)"
     . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\\S\\s]*<h6[^>]*>([^<]+)<\\/h6>/';
 
 const ARTICLE_REGEX = '/<div class="powiazany-artykul-shortcode">[\\S\\s]*<a href="([^"]+)"[\\S\\s]*'
-    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\\S\\s]*alt="([^"]+)"[\\S\\s]*'
+    . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\\S\\s]*alt=("[^"]+"|\'[^\']+\')[\\S\\s]*'
     . '<h3[^>]*>([^<]+)<\\/h3>/';
 
 const MAP_REGEX = '/flourish-map.*data-url="([^"]+flourish\\.studio\\/[^"]+\\/embed)"/';
@@ -27,9 +28,12 @@ function replace_refs(string $source): string
     }
 
     if (null !== $article = Regex\first_match($source, ARTICLE_REGEX)) {
+        /** @psalm-suppress InvalidArgument Str\slice works with negative length. */
+        $alt = Html\encode(Str\slice($article[3], 1, -1));
+
         return Str\format(
             '<p><a href="%s">%s →</a></p> <img src="%s" alt="%s">',
-            $article[1], $article[4], full_res($article[2]), $article[3],
+            $article[1], $article[4], full_res($article[2]), $alt,
         );
     }
 
