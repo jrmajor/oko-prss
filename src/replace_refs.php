@@ -13,7 +13,7 @@ const ARTICLE_REGEX = '/<div class="powiazany-artykul-shortcode">[\\S\\s]*<a hre
     . 'data-src="(https:\\/\\/oko\\.press\\/images\\/[^"]+)"[\\S\\s]*alt=("[^"]+"|\'[^\']+\')[\\S\\s]*'
     . '<h3[^>]*>([^<]+)<\\/h3>/';
 
-const MAP_REGEX = '/flourish-map.*data-url="([^"]+flourish\\.studio\\/[^"]+\\/embed)"/';
+const MAP_REGEX = '/flourish-map.*data-(?:url|src)="([^"]+flourish\\.studio\\/[^"]+\\/embed)(?:\\?[^"]*)?"/';
 
 /**
  * Replace references to other OKO.press articles and podcasts.
