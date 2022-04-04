@@ -13,6 +13,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'zelenski-o-rosyjskich-zolnierzach-rzeznicy-mordercy-gwalciciele-odessa-pod-ostrzalemdzien-40-na-zywo',
+    'silne-eksplozje-rosja-atakuje-z-powietrza-odesse-dzien-39-na-zywo',
+    'zelenski-ostrzega-przed-wspolpraca-z-rosjanami-gauleiterzy-moga-sie-meldowac-w-rostowie-dzien-38-na-zywo',
     'ewakuacja-zniszczonego-mariupola-ukrainskie-wojsko-robi-postepy-pod-czernihowem-dzien-37-na-zywo',
     'rosja-przygotowuje-wielka-ofensywe-w-donbasie-twierdzi-zelenski-dzien-36-na-zywo',
     'swiat-nie-wierzy-w-wycofywanie-sie-rosjan-dzien-35-na-zywo',
