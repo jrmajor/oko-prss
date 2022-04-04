@@ -50,8 +50,8 @@ function parse_entries(string $source): array
     });
 
     $nodes = Vec\filter($nodes, function (Crawler $n): bool {
-        return $n->nodeName() !== 'script' ||
-            ! Str\contains($n->html(), 't="live-news",e="live-blog-update"');
+        return $n->nodeName() !== 'script'
+            || ! Str\contains($n->html(), 't="live-news",e="live-blog-update"');
     });
 
     return Iter\reduce($nodes, entry_reducer(...), new Acc(parse_meta($source)))->entries;
