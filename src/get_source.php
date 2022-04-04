@@ -6,15 +6,14 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Psl\File;
 use Psl\Filesystem;
-use Psl\Str;
 
 const CACHE_PATH = __DIR__ . '/../.cache/articles';
 
-function get_source(string $article): string
+function get_source(int $n, string $article): string
 {
     Filesystem\create_directory(CACHE_PATH);
 
-    $cachePath = CACHE_PATH . '/' . $article;
+    $cachePath = CACHE_PATH . "/{$n}-{$article}.html";
 
     $client = new Client(['base_uri' => 'https://oko.press', 'timeout' => 2.0]);
 
@@ -29,7 +28,7 @@ function get_source(string $article): string
             throw $e;
         }
 
-        echo Str\format("Failed to fetch article %s, using cache.\n", $article);
+        echo "Failed to fetch day {$n}, using cache instead.\n";
 
         return File\read($cachePath);
     }
