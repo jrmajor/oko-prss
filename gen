@@ -13,6 +13,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 (new Collision())->register();
 
 $articles = Vec\map([
+    'ewakuacja-zniszczonego-mariupola-ukrainskie-wojsko-robi-postepy-pod-czernihowem-dzien-37-na-zywo',
+    'rosja-przygotowuje-wielka-ofensywe-w-donbasie-twierdzi-zelenski-dzien-36-na-zywo',
+    'swiat-nie-wierzy-w-wycofywanie-sie-rosjan-dzien-35-na-zywo',
+    'kolejna-runda-negocjacji-w-turcji-centrum-mariupola-wciaz-pod-kontrola-ukrainy-dzien-34-na-zywo',
+    'podolak-rosja-nie-ma-juz-jezyka-humanizmu-tylko-bomby-i-proby-zmiecenia-ukrainy-dzien-33-na-zywo',
+    'zelenski-prosi-zachod-o-dostawy-ciezkiej-broni-nie-stracimy-rakiet-strzelbami-dzien-32-na-zywo',
+    'biden-spotka-sie-w-polsce-z-ukrainskimi-ministrami-dzien-31-na-zywo',
+    'do-polski-przylatuje-joe-biden-ukraina-zada-uwolnienia-uprowadzonych-samorzadowcow-dzien-30-na-zywo',
     'miesiac-od-wybuchu-wojny-zelenski-wzywa-wyjdzcie-na-ulice-okazcie-wsparcie-ukrainie-dzien-29-na-zywo',
     'ukraina-wojna-dzien-28-na-zywo',
     'ukraina-odrzucila-rosyjskie-ultimatum-w-sprawie-mariupola-dzien-27-na-zywo',
