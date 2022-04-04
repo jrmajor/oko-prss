@@ -18,7 +18,7 @@ function entry_reducer(Acc $acc, Crawler $el): Acc
     $html = $el->outerHtml();
 
     // We arrived at the summary, the rest of the article is junk.
-    if (Str\starts_with($html, '<h2>') || Str\contains($html, 'ScrollToComment')) {
+    if (/** Str\starts_with($html, '<h2>') || */ Str\contains($html, 'ScrollToComment')) {
         return $acc->stop();
     }
 
