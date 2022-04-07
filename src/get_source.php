@@ -45,7 +45,7 @@ function get_source(HttpClient $client, int $n, string $article): Promise
                 throw $e;
             }
 
-            IO\write_line('Failed to fetch day %d, using cache.', $n);
+            IO\write_line("\e[33mFailed to fetch day %d, using cache.\e[0m", $n);
 
             return File\read($cachePath);
         }

@@ -40,7 +40,7 @@ Amp\Loop::run(function () {
 
     $sources = Vec\reverse(Dict\sort_by_key($sources));
 
-    IO\write_line('Fetched sources in %.2Fs', microtime(true) - $start);
+    IO\write_line("\e[32mFetched sources in %.2Fs\e[0m", microtime(true) - $start);
 
     $start = microtime(true);
 
@@ -52,5 +52,5 @@ Amp\Loop::run(function () {
     File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);
     File\write(__DIR__ . '/feed/full.xml', $full, File\WriteMode::TRUNCATE);
 
-    IO\write_line('Generated and written in %.2Fs', microtime(true) - $start);
+    IO\write_line("\e[32mGenerated and written in %.2Fs\e[0m", microtime(true) - $start);
 });
