@@ -3,24 +3,54 @@
 
 namespace Major\OkoPrss;
 
+use Amp;
+use Amp\Http\Client\HttpClientBuilder;
 use NunoMaduro\Collision\Provider as Collision;
 use Psl\Dict;
 use Psl\File;
+use Psl\IO;
 use Psl\Vec;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 (new Collision())->register();
 
-$articles = Vec\map_with_key(
-    require __DIR__ . '/urls.php',
-    fn (int $n, string $a) => get_source($n, $a),
-);
+Amp\Loop::run(function () {
+    $start = microtime(true);
 
-$entries = Vec\flat_map($articles, fn (string $a) => parse_entries($a));
+    $urls = Dict\map_with_key(
+        require __DIR__ . '/urls.php',
+        fn (int $n, string $url) => [$n, $url],
+    );
 
-$feed = generate_atom(Dict\take($entries, 250));
-$full = generate_atom($entries);
+    $sources = [];
 
-File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);
-File\write(__DIR__ . '/feed/full.xml', $full, File\WriteMode::TRUNCATE);
+    $client = HttpClientBuilder::buildDefault();
+
+    yield Amp\Sync\ConcurrentIterator\each(
+        Amp\Iterator\fromIterable($urls),
+        new Amp\Sync\LocalSemaphore(10),
+        /**
+         * @param array{int, string} $url
+         */
+        function (array $url) use (&$sources, $client) {
+            $sources[$url[0]] = yield get_source($client, $url[0], $url[1]);
+        },
+    );
+
+    $sources = Vec\reverse(Dict\sort_by_key($sources));
+
+    IO\write_line('Fetched sources in %.2Fs', microtime(true) - $start);
+
+    $start = microtime(true);
+
+    $entries = Vec\flat_map($sources, fn (string $a) => parse_entries($a));
+
+    $feed = generate_atom(Dict\take($entries, 250));
+    $full = generate_atom($entries);
+
+    File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);
+    File\write(__DIR__ . '/feed/full.xml', $full, File\WriteMode::TRUNCATE);
+
+    IO\write_line('Generated and written in %.2Fs', microtime(true) - $start);
+});
