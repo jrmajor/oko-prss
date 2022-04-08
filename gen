@@ -9,6 +9,7 @@ use NunoMaduro\Collision\Provider as Collision;
 use Psl\Dict;
 use Psl\File;
 use Psl\IO;
+use Psl\Type;
 use Psl\Vec;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -34,9 +35,12 @@ Amp\Loop::run(function () {
          * @param array{int, string} $url
          */
         function (array $url) use (&$sources, $client) {
+            /** @psalm-suppress MixedArrayAssignment */
             $sources[$url[0]] = yield get_source($client, $url[0], $url[1]);
         },
     );
+
+    $sources = Type\dict(Type\int(), Type\string())->coerce($sources);
 
     $sources = Vec\reverse(Dict\sort_by_key($sources));
 
@@ -46,7 +50,7 @@ Amp\Loop::run(function () {
 
     $entries = Vec\flat_map($sources, fn (string $a) => parse_entries($a));
 
-    $feed = generate_atom(Dict\take($entries, 250));
+    $feed = generate_atom(Vec\values(Dict\take($entries, 250)));
     $full = generate_atom($entries);
 
     File\write(__DIR__ . '/feed/atom.xml', $feed, File\WriteMode::TRUNCATE);
