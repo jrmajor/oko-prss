@@ -1,6 +1,10 @@
 <?php
 
 return [
+    44 => 'wojna-ukraina-44-dzien',
+    43 => 'putin-chce-zakonczyc-wojne-do-9-maja-zelenski-rosja-tuszuje-zbrodnie-w-mariupolu-dzien-43-na-zywo',
+    42 => 'wybuchy-obok-lwowa-i-dniepru-usa-szykuja-nowe-sankcje-wobec-rosji-dzien-42-na-zywo',
+    41 => 'zelenski-do-rosyjskich-wojskowych-wasze-zycie-skonczy-sie-za-kratkami-dzien-41-na-zywo',
     40 => 'zelenski-o-rosyjskich-zolnierzach-rzeznicy-mordercy-gwalciciele-odessa-pod-ostrzalemdzien-40-na-zywo',
     39 => 'silne-eksplozje-rosja-atakuje-z-powietrza-odesse-dzien-39-na-zywo',
     38 => 'zelenski-ostrzega-przed-wspolpraca-z-rosjanami-gauleiterzy-moga-sie-meldowac-w-rostowie-dzien-38-na-zywo',
