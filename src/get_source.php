@@ -25,10 +25,10 @@ function get_source(HttpClient $client, int $n, string $article): Promise
 
         $request = new Request("https://oko.press/{$article}");
 
-        $request->setInactivityTimeout(500);
-        $request->setTcpConnectTimeout(500);
-        $request->setTlsHandshakeTimeout(500);
-        $request->setTransferTimeout(500);
+        $request->setInactivityTimeout(2000);
+        $request->setTcpConnectTimeout(2000);
+        $request->setTlsHandshakeTimeout(2000);
+        $request->setTransferTimeout(2000);
 
         try {
             $response = yield $client->request($request);
