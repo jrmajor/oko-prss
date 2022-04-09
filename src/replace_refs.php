@@ -15,6 +15,8 @@ const ARTICLE_REGEX = '/<div class="powiazany-artykul-shortcode">[\\S\\s]*<a hre
 
 const MAP_REGEX = '/flourish-map.*data-(?:url|src)="([^"]+flourish\\.studio\\/[^"]+\\/embed)(?:\\?[^"]*)?"/';
 
+const CHART_REGEX = '/flourish-chart.*data-info="([^"]+) \\(\\d+\\)".*data-(?:url|src)="([^"]+flourish\\.studio\\/[^"]+\\/embed)(?:\\?[^"]*)?"/';
+
 /**
  * Replace references to other OKO.press articles and podcasts.
  */
@@ -39,6 +41,10 @@ function replace_refs(string $source): string
 
     if (null !== $map = Regex\first_match($source, MAP_REGEX)) {
         return Str\format('<p><a href="%s">Zobacz na mapie →</a></p>', $map[1]);
+    }
+
+    if (null !== $map = Regex\first_match($source, CHART_REGEX)) {
+        return Str\format('<p><a href="%s">%s →</a></p>', $map[2], $map[1]);
     }
 
     return $source;
