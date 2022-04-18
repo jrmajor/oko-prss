@@ -18,6 +18,14 @@ function parse_entries(string $source): array
         ->children()
         ->each(fn (Crawler $c) => $c);
 
+    $nodes = Vec\flat_map($nodes, function (Crawler $node): array {
+        if ($node->attr('class') !== 'article-body') {
+            return [$node];
+        }
+
+        return $node->children()->each(fn (Crawler $c) => $c);
+    });
+
     $nodes = Vec\flat_map($nodes, function (Crawler $original): array {
         $isBlock = fn (Crawler $el): bool => Iter\contains([
             'article', 'div', 'section', 'header', 'footer',
