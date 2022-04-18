@@ -9,6 +9,7 @@ use NunoMaduro\Collision\Provider as Collision;
 use Psl\Dict;
 use Psl\File;
 use Psl\IO;
+use Psl\Iter;
 use Psl\Type;
 use Psl\Vec;
 
@@ -49,6 +50,8 @@ Amp\Loop::run(function () {
     $start = microtime(true);
 
     $entries = Vec\flat_map($sources, fn (string $a) => parse_entries($a));
+
+    IO\write_line('Total %d entries, %d new ones', $c = Iter\count($entries), $c - 2946);
 
     $feed = generate_atom(Vec\values(Dict\take($entries, 250)));
     $full = generate_atom($entries);
