@@ -1,6 +1,15 @@
 <?php
 
 return [
+    53 => 'zelenski-o-mariupolu-sytuacja-jest-nieludzka',
+    52 => 'w-obwodzie-kijowskim-znaleziono-900-cial-cywilow-dzien-52-na-zywo',
+    51 => 'rosyjski-okret-wojenny-na-dnie-biden-gotowy-na-wizyte-w-ukrainie-dzien-51-na-zywo',
+    50 => 'wojna-w-ukrainie-50-dzien-na-zywo',
+    49 => 'zelenski-spotka-sie-z-duda-kijow-odmowil-prezydent-niemiec-dzien-49-na-zywo',
+    48 => 'ukrainskie-sily-przygotowuja-sie-do-ostatniej-bitwy-o-mariupol-dzien-48-na-zywo',
+    47 => 'ukraina-wojna-dzien-47-na-zywo',
+    46 => 'ukrainska-armia-spodziewa-sie-rosyjskiej-ofensywy-pod-charkowem-i-w-donbasie-dzien-46-na-zywo',
+    45 => 'pentagon-o-ataku-w-kramatorsku-nie-kupujemy-zaprzeczen-rosji-dzien-45-na-zywo',
     44 => 'wojna-ukraina-44-dzien',
     43 => 'putin-chce-zakonczyc-wojne-do-9-maja-zelenski-rosja-tuszuje-zbrodnie-w-mariupolu-dzien-43-na-zywo',
     42 => 'wybuchy-obok-lwowa-i-dniepru-usa-szykuja-nowe-sankcje-wobec-rosji-dzien-42-na-zywo',
