@@ -51,7 +51,7 @@ Amp\Loop::run(function () {
 
     $entries = Vec\flat_map($sources, fn (string $a) => parse_entries($a));
 
-    IO\write_line('Total %d entries, %d new ones', $c = Iter\count($entries), $c - 2946);
+    IO\write_line('Total %d entries, %d new ones', $c = Iter\count($entries), $c - 3432);
 
     $feed = generate_atom(Vec\values(Dict\take($entries, 250)));
     $full = generate_atom($entries);
