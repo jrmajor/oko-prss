@@ -34,7 +34,7 @@ function parse_entries(string $source): array
         $child = $original;
 
         while ($isBlock($child) && $child->children()->count() === 1) {
-            if (Regex\matches($child->first()->html(), HOUR_REGEX)) {
+            if (Regex\matches($child->first()->html(), HourRegEx)) {
                 return $child->children()->each(fn (Crawler $c) => $c);
             }
 
@@ -44,7 +44,7 @@ function parse_entries(string $source): array
         if (
             $isBlock($child)
             && $child->children()->count() !== 0
-            && Regex\matches($child->first()->html(), HOUR_REGEX)
+            && Regex\matches($child->first()->html(), HourRegEx)
         ) {
             return $child->children()->each(fn (Crawler $c) => $c);
         }

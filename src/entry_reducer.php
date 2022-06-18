@@ -6,7 +6,7 @@ use Psl\Regex;
 use Psl\Str;
 use Symfony\Component\DomCrawler\Crawler;
 
-const EMAIL_PROTECTION_REGEX = '/<span class="__cf_email__" data-cfemail="[0-9a-z]*">\\[email protected\\]<\\/span>/';
+const EmailProtectionRegEx = '/<span class="__cf_email__" data-cfemail="[0-9a-z]*">\\[email protected\\]<\\/span>/';
 
 function entry_reducer(Acc $acc, Crawler $el): Acc
 {
@@ -26,7 +26,7 @@ function entry_reducer(Acc $acc, Crawler $el): Acc
     $html = Str\before($html, '<p></p></div><div class="text-center medium-text-right tab-tools">') ?? $html;
     $html = fix_photos($html);
     $html = replace_refs($html);
-    $html = Regex\replace($html, EMAIL_PROTECTION_REGEX, '<i>[email protected]</i>');
+    $html = Regex\replace($html, EmailProtectionRegEx, '<i>[email protected]</i>');
 
     // There is no time, this must be a continuation of the current entry.
     if (! $time = match_hour($html, $acc->meta->date)) {

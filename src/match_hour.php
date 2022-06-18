@@ -6,14 +6,14 @@ use Carbon\CarbonImmutable as Carbon;
 use Psl\Regex;
 use Psl\Type;
 
-const HOUR_REGEX_OLD = '<(?:p|div)[^>]*>\\s*<(?:strong|b)[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\d+)[^\\d\\w]';
-const HOUR_REGEX_NEW = '<div class="live-blog-update.*<time.*datetime="([^"]*)">.*<\\/time><\\/div>';
+const HourRegExOld = '<(?:p|div)[^>]*>\\s*<(?:strong|b)[^>]*>\\s*(\\d+)\\s*[:.]\\s*(\\d+)[^\\d\\w]';
+const HourRegExNew = '<div class="live-blog-update.*<time.*datetime="([^"]*)">.*<\\/time><\\/div>';
 
-const HOUR_REGEX = '/^(?:(?:' . HOUR_REGEX_OLD . ')|(?:' . HOUR_REGEX_NEW . '))/';
+const HourRegEx = '/^(?:(?:' . HourRegExOld . ')|(?:' . HourRegExNew . '))/';
 
 function match_hour(string $html, Carbon $date): ?Carbon
 {
-    if (! $match = Regex\first_match($html, HOUR_REGEX)) {
+    if (! $match = Regex\first_match($html, HourRegEx)) {
         return null;
     }
 

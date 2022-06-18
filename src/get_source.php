@@ -11,7 +11,7 @@ use Psl\File;
 use Psl\Filesystem;
 use Psl\IO;
 
-const CACHE_PATH = __DIR__ . '/../.cache/articles';
+const CachePath = __DIR__ . '/../.cache/articles';
 
 /**
  * @return Promise<string>
@@ -19,9 +19,9 @@ const CACHE_PATH = __DIR__ . '/../.cache/articles';
 function get_source(HttpClient $client, int $n, string $article): Promise
 {
     return Amp\call(function () use ($client, $n, $article) {
-        Filesystem\create_directory(CACHE_PATH);
+        Filesystem\create_directory(CachePath);
 
-        $cachePath = CACHE_PATH . "/{$n}-{$article}.html";
+        $cachePath = CachePath . "/{$n}-{$article}.html";
 
         $request = new Request("https://oko.press/{$article}");
 
