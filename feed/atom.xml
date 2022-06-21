@@ -448,273 +448,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-25T07:26:00+00:00</updated>
@@ -926,273 +927,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-24T08:00:00+00:00</updated>
@@ -1500,273 +1502,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-23T07:00:00+00:00</updated>
@@ -2194,273 +2197,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-22T07:42:00+00:00</updated>
@@ -2804,273 +2808,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-20T07:14:00+00:00</updated>
@@ -3414,273 +3419,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-20T07:32:00+00:00</updated>
@@ -4048,273 +4054,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-19T06:12:00+00:00</updated>
@@ -4874,273 +4881,274 @@
 </div>
 <div class="cf-banner-after-content__footer"></div>
 </div> <script>
-    $((function(){var n="wplataUrl";function t(){var t=getCookie(n);if(t)return t;var e=window.location.href.split("?")[0];return function(t){setCookie(n,t,.0416799)}(e),e}function e(n){var e,a=$(".cf-banner-after-content"),r=function(n){return n.url||""}(n),o=function(n){return n.link_text||""}(n),i=(e=function(n){return n.title||""}(n),"banner-down-post-txt-no-"+e.split(" ").filter(Boolean).join("-").toLowerCase()),f=function(n){return n.content||""}(n),c=draftjsToHtml(f);$(".cf-banner-after-content .cf-banner-after-content__text").html(c),$(".cf-banner-after-content .cf-banner-after-content__link a").html(o).attr("href",r).addClass(i).click((function(e){if(!function(n){return n.datalayer_disable||!1}(n)){e.preventDefault();var a=function(n){return n.datalayer_type||"Jednorazowa"}(n),r=(t(),{event:"DodanieDoKoszyka",wplataRodzaj:a,wplataPosrednik:"PayU",wplataBelka:incomeBar,wplataUrl:i,USDValue:"0",PLNValue:"0",transaction_id:"",content_type:"wsparcie",content_ids:"1"});dataLayer.push(r),window.location.href=$(this).attr("href")}})),$(".cf-banner-after-content .cf-banner-after-content__footer").html("Dzi&#281;kujemy!"),a.removeClass("-loading")}function a(n){n&&e(n.data.objectConfiguration)}function r(){e(JSON.parse(''))}!function(){var n=$(".cf-banner-after-content");n.hasClass("-loading")||n.addClass("-loading");var t=function(){for(var n=JSON.parse('["hasLogged","points","krsCopied"]'),t=new URL('https://vexillum.oko.press/cl43yj7or000009jwgsmp3ypl'),e=0;e<n.length;e+=1){var a=n[e],r=getCookie(a);""!==r&&t.searchParams.append(a,r)}return t}();$.get(t).done(a).fail(r)}()}));
-    // $(function() {
-    //   /**
-    //    * Income url cookie name.
-    //    */
+    $(function() {
+      /**
+       * Income url cookie name.
+       */
 
-    //   var INCOME_URL_COOKIE = 'wplataUrl';
-    //   /**
-    //    * Income bar cookie name.
-    //    */
-    //   var INCOME_BAR_COOKIE = 'wplataBelka';
+      var INCOME_URL_COOKIE = 'wplataUrl';
+      /**
+       * Income bar cookie name.
+       */
+      var INCOME_BAR_COOKIE = 'wplataBelka';
 
-    //   /**
-    //    * Get content destination api url.
-    //    * @return {string}
-    //    */
-    //   function getContentDestinationUrl() {
-    //     var apiUrl = 'https://vexillum.oko.press';
-    //     var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
-    //     var baseUrl = apiUrl + "/" + contentDestinationId;
-    //     var vars = JSON.parse('["hasLogged","points","krsCopied"]');
-    //     var url = new URL(baseUrl);
-    //     for(var i = 0; i < vars.length; i += 1) {
-    //       var v = vars[i];
-    //       var cookieValue = getCookie(v);
-    //       if(cookieValue === "") continue;
-    //       url.searchParams.append(v, cookieValue);
-    //     }
-    //     return url;
-    //   };
+      /**
+       * Get content destination api url.
+       * @return {string}
+       */
+      function getContentDestinationUrl() {
+        var apiUrl = 'https://vexillum.oko.press';
+        var contentDestinationId = 'cl43yj7or000009jwgsmp3ypl';
+        var baseUrl = apiUrl + "/" + contentDestinationId;
+        var vars = JSON.parse('["hasLogged","points","krsCopied"]');
+        var url = new URL(baseUrl);
+        for(var i = 0; i < vars.length; i += 1) {
+          var v = vars[i];
+          var cookieValue = getCookie(v);
+          if(cookieValue === "") continue;
+          url.searchParams.append(v, cookieValue);
+        }
+        return url;
+      };
 
-    //   /**
-    //    * Get ContentPool object configuration.
-    //    */
-    //   function getObjectConfig(data) {
-    //     return data.objectConfiguration;
-    //   };
+      /**
+       * Get ContentPool object configuration.
+       */
+      function getObjectConfig(data) {
+        return data.objectConfiguration;
+      };
 
-    //   /**
-    //    * Return boolean if data layer is disabled.
-    //    * @return {boolean}
-    //    * @default false
-    //    */
-    //   function isDataLayerDisabled(config) {
-    //     return config.datalayer_disable || false;
-    //   };
+      /**
+       * Return boolean if data layer is disabled.
+       * @return {boolean}
+       * @default false
+       */
+      function isDataLayerDisabled(config) {
+        return config.datalayer_disable || false;
+      };
 
-    //   /**
-    //    * Get data layer type from content pool object configuration
-    //    * @return {string}
-    //    * @default "Jednorazowa"
-    //    */
-    //   function getDataLayerType(config) {
-    //     return config.datalayer_type || "Jednorazowa";
-    //   };
+      /**
+       * Get data layer type from content pool object configuration
+       * @return {string}
+       * @default "Jednorazowa"
+       */
+      function getDataLayerType(config) {
+        return config.datalayer_type || "Jednorazowa";
+      };
 
-    //   /**
-    //    * Get url from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLink(config) {
-    //     return config.url || "";
-    //   };
+      /**
+       * Get url from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLink(config) {
+        return config.url || "";
+      };
 
-    //   /**
-    //    * Get button text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getLinkText(config) {
-    //     return config.link_text || "";
-    //   }
+      /**
+       * Get button text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getLinkText(config) {
+        return config.link_text || "";
+      }
 
-    //   /**
-    //    * Get text from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getContent(config) {
-    //     return config.content || "";
-    //   }
+      /**
+       * Get text from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getContent(config) {
+        return config.content || "";
+      }
 
-    //   /**
-    //    * Get title from content pool object configuration.
-    //    * @return {string}
-    //    * @default ""
-    //    */
-    //   function getTitle(config) {
-    //     return config.title || "";
-    //   }
+      /**
+       * Get title from content pool object configuration.
+       * @return {string}
+       * @default ""
+       */
+      function getTitle(config) {
+        return config.title || "";
+      }
 
-    //   /**
-    //    * Get current url without queries.
-    //    * @return {string}
-    //    */
-    //   function getCurrentUrl() {
-    //     return window.location.href.split('?')[0];
-    //   };
+      /**
+       * Get current url without queries.
+       * @return {string}
+       */
+      function getCurrentUrl() {
+        return window.location.href.split('?')[0];
+      };
 
-    //   /**
-    //    * Set income url cookie.
-    //    */
-    //   function setIncomeUrlCookie(incomeUrl) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
-    //   };
+      /**
+       * Set income url cookie.
+       */
+      function setIncomeUrlCookie(incomeUrl) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_URL_COOKIE, incomeUrl, expirationTime);
+      };
 
-    //   /**
-    //    * Get income url cookie.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeUrlCookie() {
-    //     var incomeUrl = getCookie(INCOME_URL_COOKIE);
+      /**
+       * Get income url cookie.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeUrlCookie() {
+        var incomeUrl = getCookie(INCOME_URL_COOKIE);
 
-    //     if (incomeUrl) {
-    //       return incomeUrl;
-    //     }
+        if (incomeUrl) {
+          return incomeUrl;
+        }
 
-    //     var currentUrl = getCurrentUrl();
-    //     setIncomeUrlCookie(currentUrl);
-    //     return currentUrl;
-    //   };
+        var currentUrl = getCurrentUrl();
+        setIncomeUrlCookie(currentUrl);
+        return currentUrl;
+      };
 
-    //   /**
-    //    * Set income bar cookie value, with 1 hour expiration time.
-    //    */
-    //   function setIncomeBarCookie(incomeBar) {
-    //     var expirationTime = 0.0416799; // 1 hour
-    //     setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
-    //   }
+      /**
+       * Set income bar cookie value, with 1 hour expiration time.
+       */
+      function setIncomeBarCookie(incomeBar) {
+        var expirationTime = 0.0416799; // 1 hour
+        setCookie(INCOME_BAR_COOKIE, incomeBar, expirationTime);
+      }
 
-    //   /**
-    //    * Get income bar cookie value.
-    //    * @artifact If a cookie is not already set, set a cookie.
-    //    * @return {string}
-    //    */
-    //   function getIncomeBarCookie(bannerClass) {
-    //     var incomeBar = getCookie(INCOME_BAR_COOKIE);
+      /**
+       * Get income bar cookie value.
+       * @artifact If a cookie is not already set, set a cookie.
+       * @return {string}
+       */
+      function getIncomeBarCookie(bannerClass) {
+        var incomeBar = getCookie(INCOME_BAR_COOKIE);
 
-    //     if (incomeBar) {
-    //       return incomeBar;
-    //     }
+        if (incomeBar) {
+          return incomeBar;
+        }
 
-    //     setIncomeBarCookie(bannerClass);
-    //     return bannerClass;
-    //   };
+        setIncomeBarCookie(bannerClass);
+        return bannerClass;
+      };
 
-    //   /**
-    //    * Get banner element selector.
-    //    * @return {string}
-    //    */
-    //   function getBannerSelector() {
-    //     return '.cf-banner-after-content';
-    //   };
+      /**
+       * Get banner element selector.
+       * @return {string}
+       */
+      function getBannerSelector() {
+        return '.cf-banner-after-content';
+      };
 
-    //   /**
-    //    * Get button element selector.
-    //    * @return {string}
-    //    */
-    //   function getLinkSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__link a';
-    //   };
+      /**
+       * Get button element selector.
+       * @return {string}
+       */
+      function getLinkSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__link a';
+      };
 
-    //   /**
-    //    * Get text element selector.
-    //    * @return {string}
-    //    */
-    //   function getTextSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__text';
-    //   };
+      /**
+       * Get text element selector.
+       * @return {string}
+       */
+      function getTextSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__text';
+      };
 
-    //   /**
-    //    * Get footer element selector.
-    //    * @return {string}
-    //    */
-    //   function getFooterSelector() {
-    //     return getBannerSelector() + ' .cf-banner-after-content__footer';
-    //   };
+      /**
+       * Get footer element selector.
+       * @return {string}
+       */
+      function getFooterSelector() {
+        return getBannerSelector() + ' .cf-banner-after-content__footer';
+      };
 
-    //   /**
-    //    * Get data layer income bar
-    //    * @param {string}
-    //    * @return {string}
-    //    */
-    //   function getLinkClass(title) {
-    //     const prefix = 'banner-down-post-txt-no-';
-    //     const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
-    //     return prefix + slug;
-    //   }
+      /**
+       * Get data layer income bar
+       * @param {string}
+       * @return {string}
+       */
+      function getLinkClass(title) {
+        const prefix = 'banner-down-post-txt-no-';
+        const slug = title.split(' ').filter(Boolean).join('-').toLowerCase();
+        return prefix + slug;
+      }
 
-    //   function renderBanner(config) {
-    //     var $banner = $(getBannerSelector());
-    //     var link = getLink(config);
-    //     var linkText = getLinkText(config);
-    //     var linkClass = getLinkClass(getTitle(config));
-    //     var content = getContent(config);
-    //     var contentHtml = draftjsToHtml(content);
+      function renderBanner(config) {
+        var $banner = $(getBannerSelector());
+        var link = getLink(config);
+        var linkText = getLinkText(config);
+        var linkClass = getLinkClass(getTitle(config));
+        var content = getContent(config);
+        var contentHtml = draftjsToHtml(content);
         
-    //     $(getTextSelector()).html(contentHtml);
+        $(getTextSelector()).html(contentHtml);
 
-    //     $(getLinkSelector())
-    //       .html(linkText)
-    //       .attr('href', link)
-    //       .addClass(linkClass)
-    //       .click(function(e) {
-    //         if (isDataLayerDisabled(config)) return;
+        $(getLinkSelector())
+          .html(linkText)
+          .attr('href', link)
+          .addClass(linkClass)
+          .click(function(e) {
+            if (isDataLayerDisabled(config)) return;
 
-    //         e.preventDefault();
-    //         var dataLayerType = getDataLayerType(config);
-    //         var incomeUrl = getIncomeUrlCookie();
+            e.preventDefault();
+            var dataLayerType = getDataLayerType(config);
+            var incomeUrl = getIncomeUrlCookie();
+            var incomeBar = getIncomeBarCookie(linkClass);
 
-    //         var dataLayerObject = {
-    //           'event': 'DodanieDoKoszyka',
-    //           'wplataRodzaj': dataLayerType,
-    //           'wplataPosrednik': 'PayU',
-    //           'wplataBelka': incomeBar,
-    //           'wplataUrl': linkClass,
-    //           'USDValue': '0',
-    //           'PLNValue': '0',
-    //           'transaction_id': '',
-    //           'content_type': 'wsparcie',
-    //           'content_ids': '1',
-    //         };
-    //       dataLayer.push(dataLayerObject);
-    //       window.location.href = $(this).attr('href');
-    //     });
+            var dataLayerObject = {
+              'event': 'DodanieDoKoszyka',
+              'wplataRodzaj': dataLayerType,
+              'wplataPosrednik': 'PayU',
+              'wplataBelka': incomeBar,
+              'wplataUrl': incomeUrl,
+              'USDValue': '0',
+              'PLNValue': '0',
+              'transaction_id': '',
+              'content_type': 'wsparcie',
+              'content_ids': '1',
+            };
+          dataLayer.push(dataLayerObject);
+          setIncomeBarCookie(linkClass);
+          window.location.href = $(this).attr('href');
+        });
 
-    //     $(getFooterSelector()).html("Dzi&#281;kujemy!");
+        $(getFooterSelector()).html("Dzi&#281;kujemy!");
         
-    //     $banner.removeClass('-loading');
-    //   }
+        $banner.removeClass('-loading');
+      }
 
-    //   /**
-    //    * Handle success response
-    //    */
-    //   function onDone(response) {
-    //     if (!response) return;
-    //     var config = getObjectConfig(response.data);
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle success response
+       */
+      function onDone(response) {
+        if (!response) return;
+        var config = getObjectConfig(response.data);
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Handle error response
-    //    */
-    //   function onFail() {
-    //     var config = JSON.parse('')
-    //     renderBanner(config);
-    //   }
+      /**
+       * Handle error response
+       */
+      function onFail() {
+        var config = JSON.parse('')
+        renderBanner(config);
+      }
 
-    //   /**
-    //    * Fetch Banner. Main function
-    //    * @main
-    //    */
-    //   function fetchBanner() {
-    //     var $banner = $(getBannerSelector());
-    //     if(!$banner.hasClass('-loading')) {
-    //       $banner.addClass('-loading');
-    //     };
-    //     var url = getContentDestinationUrl();
-    //     $.get(url).done(onDone).fail(onFail);
-    //   }
+      /**
+       * Fetch Banner. Main function
+       * @main
+       */
+      function fetchBanner() {
+        var $banner = $(getBannerSelector());
+        if(!$banner.hasClass('-loading')) {
+          $banner.addClass('-loading');
+        };
+        var url = getContentDestinationUrl();
+        $.get(url).done(onDone).fail(onFail);
+      }
 
 
-    //   fetchBanner();
-    // });
+      fetchBanner();
+    });
   </script>]]>
             </summary>
             <updated>2022-04-18T07:32:00+00:00</updated>
