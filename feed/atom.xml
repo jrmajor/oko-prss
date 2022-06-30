@@ -446,7 +446,7 @@
 <div class="cf-banner-after-content__link">
 <a></a>
 </div>
-<div class="cf-banner-after-content__footer"></div>
+ <div class="cf-banner-after-content__footer"></div>
 </div> <script>
     $(function() {
       /**
